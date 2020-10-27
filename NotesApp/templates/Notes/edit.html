@@ -1,0 +1,42 @@
+{% extends 'weather/base.html' %}
+{% block content %}
+{% load static %}
+<div class="forecast-container">
+    <div class="forecast">
+        <div class="panel panel-default" style="margin: 20px;">
+            <br>
+            <div class="panel-heading ml-4"><h2>Edit Note</h2></div>
+        <div class="panel-body">   
+            <div class="container bootstrap snippet">               
+                <form method="POST" class="post-form" action="/notes/update/{{note.id}}">  
+                        {% csrf_token %}  
+                        <div class="form-group w-75">
+                        <label>Title: </label>
+                        <br>                       
+                        <input type="text" name="title" class="form-control" value="{{ note.title }}" required>
+                        </div>
+                        <br>
+                        <div class="form-group w-75">
+                        <label>Note Content: </label>
+                        <br>
+                        <textarea name="content" class="form-control justify-content-center" value="{{ note.content }}" required>
+                            {{ note.content }}
+                        </textarea>
+                        </div>
+                        <br>
+                        <div class="form-group w-75">
+                        <label>Author: </label>
+                        <br>
+                        <input type="text" name="author" value="{{ note.author }}" class="form-control mr-2" required>
+                        </div>
+                        <br>
+                        <div class="form-group w-75">
+                        <input type="submit" value="Save Note" class="btn btn-primary pull-right">
+                        </div>
+                        <div class="clearfix"></div>
+                        </form> 
+            </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

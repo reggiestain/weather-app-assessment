@@ -1,0 +1,24 @@
+{% extends 'weather/base.html' %}
+{% block content %}
+{% load static %}
+<div class="forecast-container">
+    <div class="forecast">
+        <div class="panel panel-default" style="margin: 20px;">
+            <br>
+            <div class="panel-heading ml-4"><h2>Create Note</h2></div>
+        <div class="panel-body">   
+            <div class="container bootstrap snippet">                
+                    <form method="POST" action="{% url 'create' %}">
+                        {% csrf_token %}
+                        {{ note_form}}
+                        <br>
+                        <div class="form-group w-75">
+                            <input type="submit" value="Save Note" class="btn btn-primary pull-right">
+                            </div>
+                        <div class="clearfix"></div>
+                    </form> 
+            </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

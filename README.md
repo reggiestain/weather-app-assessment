@@ -20,20 +20,9 @@ pip install -r requirements.txt
 
 ```
 
-## 3. Duplicate new_project/new_project/local_settings_example.py and save as local_settings.py.
+## 3. Create superuser.
 
-## 4. Enter your database settings in local_settings.py.
-
-## 5. Initialize your database.
-
-```bash
-
-python ./manage.py syncdb
-python ./manage.py migrate
-
-```
-
-You 'll need to create a new superuser for the admin to access the custom note model.
+You 'll need to create a new superuser for the admin to access the custom model.
 
 ```bash
 
@@ -41,7 +30,7 @@ python ./manage.py createsuperuser
 
 ```
 
-## 6. Run the development server to verify everything is working.
+## 4. Run the development server to verify everything is working.
 
 ```bash
 
